@@ -27,9 +27,11 @@ public class HellobootApplication {
             servletContext.addServlet("hello", new HttpServlet() {
                 @Override
                 public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+                    String name = req.getParameter("name");
+
                     res.setStatus(HttpStatus.OK.value());
                     res.setHeader(HttpHeaders.CONTENT_TYPE, MediaType.TEXT_PLAIN_VALUE);
-                    res.getWriter().println("Hello Servlet");
+                    res.getWriter().println("Hello " + name);
                 }
             }).addMapping("/hello");
         });
