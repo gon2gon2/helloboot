@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class HelloController {
     private final HelloService helloService;
 
-    public HelloController(SimpleHelloService helloService) {this.helloService = helloService;}
+    public HelloController(HelloService helloService) {this.helloService = helloService;}
 
     @GetMapping
     @ResponseBody
